@@ -1,0 +1,17 @@
+F:\Educational\WEBAPI\Educational.API\Educational.Common\bin\Debug\net6.0\Educational.Common.deps.json
+F:\Educational\WEBAPI\Educational.API\Educational.Common\bin\Debug\net6.0\Educational.Common.runtimeconfig.json
+F:\Educational\WEBAPI\Educational.API\Educational.Common\bin\Debug\net6.0\Educational.Common.dll
+F:\Educational\WEBAPI\Educational.API\Educational.Common\bin\Debug\net6.0\Educational.Common.pdb
+F:\Educational\WEBAPI\Educational.API\Educational.Common\bin\Debug\net6.0\Educational.DataContracts.dll
+F:\Educational\WEBAPI\Educational.API\Educational.Common\bin\Debug\net6.0\Educational.DataContracts.pdb
+F:\Educational\WEBAPI\Educational.API\Educational.Common\obj\Debug\net6.0\Educational.Common.csproj.AssemblyReference.cache
+F:\Educational\WEBAPI\Educational.API\Educational.Common\obj\Debug\net6.0\Educational.Common.GeneratedMSBuildEditorConfig.editorconfig
+F:\Educational\WEBAPI\Educational.API\Educational.Common\obj\Debug\net6.0\Educational.Common.AssemblyInfoInputs.cache
+F:\Educational\WEBAPI\Educational.API\Educational.Common\obj\Debug\net6.0\Educational.Common.AssemblyInfo.cs
+F:\Educational\WEBAPI\Educational.API\Educational.Common\obj\Debug\net6.0\Educational.Common.csproj.CoreCompileInputs.cache
+F:\Educational\WEBAPI\Educational.API\Educational.Common\obj\Debug\net6.0\Educational.Common.csproj.CopyComplete
+F:\Educational\WEBAPI\Educational.API\Educational.Common\obj\Debug\net6.0\Educational.Common.dll
+F:\Educational\WEBAPI\Educational.API\Educational.Common\obj\Debug\net6.0\refint\Educational.Common.dll
+F:\Educational\WEBAPI\Educational.API\Educational.Common\obj\Debug\net6.0\Educational.Common.pdb
+F:\Educational\WEBAPI\Educational.API\Educational.Common\obj\Debug\net6.0\Educational.Common.genruntimeconfig.cache
+F:\Educational\WEBAPI\Educational.API\Educational.Common\obj\Debug\net6.0\ref\Educational.Common.dll

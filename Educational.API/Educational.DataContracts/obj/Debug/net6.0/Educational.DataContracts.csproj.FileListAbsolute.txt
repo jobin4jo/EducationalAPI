@@ -1,0 +1,14 @@
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\bin\Debug\net6.0\Educational.DataContracts.deps.json
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\bin\Debug\net6.0\Educational.DataContracts.runtimeconfig.json
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\bin\Debug\net6.0\Educational.DataContracts.dll
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\bin\Debug\net6.0\Educational.DataContracts.pdb
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\obj\Debug\net6.0\Educational.DataContracts.csproj.AssemblyReference.cache
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\obj\Debug\net6.0\Educational.DataContracts.GeneratedMSBuildEditorConfig.editorconfig
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\obj\Debug\net6.0\Educational.DataContracts.AssemblyInfoInputs.cache
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\obj\Debug\net6.0\Educational.DataContracts.AssemblyInfo.cs
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\obj\Debug\net6.0\Educational.DataContracts.csproj.CoreCompileInputs.cache
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\obj\Debug\net6.0\Educational.DataContracts.dll
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\obj\Debug\net6.0\refint\Educational.DataContracts.dll
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\obj\Debug\net6.0\Educational.DataContracts.pdb
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\obj\Debug\net6.0\Educational.DataContracts.genruntimeconfig.cache
+F:\Educational\WEBAPI\Educational.API\Educational.DataContracts\obj\Debug\net6.0\ref\Educational.DataContracts.dll
