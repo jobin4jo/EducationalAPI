@@ -38,5 +38,24 @@ namespace Educational.API.Controllers
                 return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
             }
         }
+
+
+        [HttpPost("Login")]
+        public async Task<ActionResult> Login([FromBody] LoginRequestDTO  login)
+        {
+            try
+            {
+                var data = await this.userRepository.login(login);  
+                
+                {
+                    return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "", Data = new { userId = data } });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
+            }
+        }
     }
 }
