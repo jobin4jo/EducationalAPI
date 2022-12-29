@@ -26,4 +26,8 @@
     <ProjectReference Include="..\Educational.Data\Educational.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Uploads\" />
+  </ItemGroup>
+
 </Project>

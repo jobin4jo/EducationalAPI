@@ -66,3 +66,4 @@ F:\Educational\WEBAPI\Educational.API\Educational.API\obj\Debug\net6.0\refint\Ed
 F:\Educational\WEBAPI\Educational.API\Educational.API\obj\Debug\net6.0\Educational.API.pdb
 F:\Educational\WEBAPI\Educational.API\Educational.API\obj\Debug\net6.0\Educational.API.genruntimeconfig.cache
 F:\Educational\WEBAPI\Educational.API\Educational.API\obj\Debug\net6.0\ref\Educational.API.dll
+F:\Educational\WEBAPI\Educational.API\Educational.API\bin\Debug\net6.0\Educational.API.staticwebassets.runtime.json

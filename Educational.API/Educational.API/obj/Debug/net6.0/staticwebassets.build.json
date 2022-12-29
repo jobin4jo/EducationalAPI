@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "d1QKLSYEms6xNk7rETzen70FD+8yR5gQzaNDu/istEM=",
+  "Hash": "fER58f9QrmIC0qnIiGGHXkk+XffVOu/mbUMLJq8SVf8=",
   "Source": "Educational.API",
   "BasePath": "_content/Educational.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Educational.API\\wwwroot",
+      "Source": "Educational.API",
+      "ContentRoot": "F:\\Educational\\WEBAPI\\Educational.API\\Educational.API\\wwwroot\\",
+      "BasePath": "_content/Educational.API",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }
