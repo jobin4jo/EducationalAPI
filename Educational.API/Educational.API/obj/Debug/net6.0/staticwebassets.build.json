@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kw1MjJPVopL/sLoaS/Q+hvFaBxdPLZeS5zOc06qRVVk=",
+  "Hash": "6L550VBBlvhvgLcomPkCG9bRNjp70DYmWd+FDEctmP0=",
   "Source": "Educational.API",
   "BasePath": "_content/Educational.API",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "F:\\Educational\\WEBAPI\\Educational.API\\Educational.API\\wwwroot\\Uploads\\012023\\{courseCover}..jpg",
+      "SourceId": "Educational.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "F:\\Educational\\WEBAPI\\Educational.API\\Educational.API\\wwwroot\\",
+      "BasePath": "_content/Educational.API",
+      "RelativePath": "Uploads/012023/{courseCover}..jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\012023\\{courseCover}..jpg"
+    },
     {
       "Identity": "F:\\Educational\\WEBAPI\\Educational.API\\Educational.API\\wwwroot\\Uploads\\122022\\profile..jpg",
       "SourceId": "Educational.API",

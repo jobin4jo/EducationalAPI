@@ -20,8 +20,7 @@ namespace Educational.DataContracts.Models
         public virtual DbSet<TbCourseDetail> TbCourseDetails { get; set; } = null!;
         public virtual DbSet<TbUser> TbUsers { get; set; } = null!;
 
-     
-
+       
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<TbCategory>(entity =>

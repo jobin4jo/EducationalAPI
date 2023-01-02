@@ -25,6 +25,7 @@ namespace Educational.API.Configuration
 
             serviceCollection.AddScoped<IUserRepository, UserRepository>();
             serviceCollection.AddScoped<ICategoryRepository, CategoryRepository>(); 
+            serviceCollection.AddScoped<ICourseDetailRepository , CourseDetailRepository>();    
          
         }
     }
