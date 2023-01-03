@@ -13,7 +13,7 @@ namespace Educational.API.Controllers
             this._webHostEnvironment = webHostEnvironment;
         }
 
-        [HttpPost("FileUpload/{location}")]
+        [HttpPost("FileUpload")]
         public async Task<ActionResult>FileUpload(string Location)
         {
             string WebPhotoPath = "";

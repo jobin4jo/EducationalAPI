@@ -32,5 +32,60 @@ namespace Educational.API.Controllers
                 return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
             }
         }
+
+        [HttpGet("GetAllCourse")]
+        public async Task<ActionResult> GetAlCourse()
+        {
+            try
+            {
+                var data = await this._courseDetail.GetAllCourseList();
+
+                {
+                    return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "", Data = new { Data= data } });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
+            }
+        }
+        [HttpDelete("DeleteByCourseId")]
+        public async Task<ActionResult> DeleteByCourseId (int id)
+        {
+            try
+            {
+                var data = await this._courseDetail.DeleteCourse(id);
+
+                {
+                    return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "", Data = new { Data = data } });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
+            }
+        }
+
+        [HttpGet("GetCourseDetailByCourseId")]
+        public async Task<ActionResult> GetCourseDetailByCourseId(int id)
+        {
+            try
+            {
+                var data = await this._courseDetail.GetCourseDetailById(id);    
+
+                {
+                    return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "", Data = new { Data = data } });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
+            }
+        }
+
+
     }
 }
