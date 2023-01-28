@@ -16,13 +16,31 @@ namespace Educational.DataContracts.Models
         {
         }
 
+        public virtual DbSet<TbAuthor> TbAuthors { get; set; } = null!;
         public virtual DbSet<TbCategory> TbCategories { get; set; } = null!;
         public virtual DbSet<TbCourseDetail> TbCourseDetails { get; set; } = null!;
+        public virtual DbSet<TbProfile> TbProfiles { get; set; } = null!;
         public virtual DbSet<TbUser> TbUsers { get; set; } = null!;
 
-       
+  
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<TbAuthor>(entity =>
+            {
+                entity.HasKey(e => e.AuthorId);
+
+                entity.ToTable("TB_Author");
+
+                entity.Property(e => e.CreatedBy)
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.DeletedOn).HasColumnType("datetime");
+            });
+
             modelBuilder.Entity<TbCategory>(entity =>
             {
                 entity.HasKey(e => e.CategoryId);
@@ -59,6 +77,17 @@ namespace Educational.DataContracts.Models
                 entity.Property(e => e.DeletedOn).HasColumnType("datetime");
 
                 entity.Property(e => e.Price).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<TbProfile>(entity =>
+            {
+                entity.HasKey(e => e.ProfileId);
+
+                entity.ToTable("TB_Profile");
+
+                entity.Property(e => e.ProfileId).HasColumnName("profileId");
+
+                entity.Property(e => e.UserId).HasColumnName("userId");
             });
 
             modelBuilder.Entity<TbUser>(entity =>

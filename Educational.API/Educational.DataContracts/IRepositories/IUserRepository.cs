@@ -1,5 +1,6 @@
 ﻿using Educational.DataContracts.DataTransferObjects;
 using Educational.DataContracts.DataTransferObjects.User;
+using Educational.DataContracts.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace Educational.DataContracts.IRepositories
     {
         Task<int> UserRegisteration(UserRequestDTO userRequest);
         Task<LoginResponseDTO> login(LoginRequestDTO loginRequest);
+        Task<List<UserRequestDTO>> GetAllUser();
     }
 }

@@ -57,5 +57,22 @@ namespace Educational.API.Controllers
                 return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
             }
         }
+        [HttpGet("GetAllUser")]
+        public async Task<ActionResult> GetAllUser()
+        {
+            try
+            {
+                var data = await this.userRepository.GetAllUser();
+
+                {
+                    return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "", Data = new { userId = data } });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
+            }
+        }
     }
 }
