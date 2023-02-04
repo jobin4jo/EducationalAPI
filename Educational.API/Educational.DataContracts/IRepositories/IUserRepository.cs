@@ -14,5 +14,7 @@ namespace Educational.DataContracts.IRepositories
         Task<int> UserRegisteration(UserRequestDTO userRequest);
         Task<LoginResponseDTO> login(LoginRequestDTO loginRequest);
         Task<List<UserRequestDTO>> GetAllUser();
+        Task<int>DeleteUser(int Userid);
+        Task<bool> ChangePassword(changePassword changePassword, int UserId);
     }
 }

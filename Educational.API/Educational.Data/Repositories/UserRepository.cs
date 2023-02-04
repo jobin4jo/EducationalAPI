@@ -61,12 +61,13 @@ namespace Educational.Data.Repositories
         public async  Task<LoginResponseDTO> login(LoginRequestDTO loginRequest)
         {
             LoginResponseDTO loginData = new LoginResponseDTO();
-            TbUser userData = this._context.TbUsers.FirstOrDefault(x => x.UserName == loginRequest.UserName);
+            TbUser userData = this._context.TbUsers.FirstOrDefault(x => x.UserName == loginRequest.UserName && x.Password==loginRequest.Password && x.Status==1);
             if (userData == null)
             {
                 loginData.IsAuthorize = false;
                 loginData.AccessToken = "";
                 loginData.Name = "";
+                loginData.userId = 0;
                 return loginData;
             }
             else
@@ -75,6 +76,7 @@ namespace Educational.Data.Repositories
                 loginData.AccessToken = Jwt.GenerateJsonWebToken(userData, this._configuration["AppSettings:JwtKey"]);
                 loginData.Name = this._context.TbUsers.Where(o => o.UserId == userData.UserId).Select(o => o.UserName).FirstOrDefault();
                 loginData.Role = userData.Role;
+                loginData.userId = userData.UserId;
                 return loginData;
             }
         }
@@ -86,7 +88,9 @@ namespace Educational.Data.Repositories
                                                where cat.Status == 1
                                                select new UserRequestDTO
                                                {
+                                                   userId= cat.UserId,  
                                                    UserName = cat.UserName, 
+                                                   Password=cat.Password,
                                                    EmailId= pro.EmailId,
                                                    Address=pro.Address,
                                                    City=pro.City,
@@ -97,6 +101,36 @@ namespace Educational.Data.Repositories
                                               
              
             return userResponse;
+        }
+
+        public async  Task<int> DeleteUser(int Userid)
+        {
+           
+
+          var UserData = await _context.TbUsers.FindAsync(Userid);
+            UserData.Status = 0;
+            UserData.DeletedOn = DateTime.Now;
+            _context.Entry(UserData).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+            return UserData.UserId;
+        }
+
+        public async  Task<bool> ChangePassword(changePassword changePassword, int UserId)
+        {
+            changePassword change = new changePassword();
+            var userData = this._context.TbUsers.FirstOrDefault(x => x.UserId==UserId&&x.Status==1);
+            if (userData != null)
+            {
+                userData.Status = 1;
+                userData.Password = changePassword.NewPassword;
+               
+                _context.Attach(userData);
+                _context.Entry(userData).Property(x => x.Password).IsModified = true;
+               
+                await _context.SaveChangesAsync();
+                return true;    
+            }
+            return true;
         }
     }
 }

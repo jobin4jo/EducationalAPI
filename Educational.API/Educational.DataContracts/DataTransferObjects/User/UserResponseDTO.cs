@@ -15,5 +15,6 @@ namespace Educational.DataContracts.DataTransferObjects.User
         public bool IsAuthorize { get; set; }
         public string Name { get; set; }
         public string Role { get; set; }
+        public int userId { get; set; }
     }
 }

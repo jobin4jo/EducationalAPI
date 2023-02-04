@@ -8,6 +8,7 @@ namespace Educational.DataContracts.DataTransferObjects
 {
     public  class UserRequestDTO
     {
+        public int userId { get; set; } 
         public string? UserName { get; set; }
         public string? Password { get; set; }
         public string? Role { get; set; }
@@ -24,5 +25,10 @@ namespace Educational.DataContracts.DataTransferObjects
     {
         public string? UserName { get; set; }
         public string? Password { get; set; }
+    }
+    public class changePassword
+    {
+        public string? PrevPassword { get; set; }
+        public string NewPassword { get; set; }
     }
 }

@@ -74,5 +74,35 @@ namespace Educational.API.Controllers
                 return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
             }
         }
+        [HttpDelete("UserDeleteById")]
+        public async Task<ActionResult> UserDeleteById(int UserId)
+        {
+            try
+            {
+                var data = await this.userRepository.DeleteUser(UserId);
+
+                {
+                    return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "DATA_DELETE_SUCCESS", Data = new { userId = data } });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
+            }
+        }
+        [HttpPost("ChangePassword/{id}")]
+        public async Task<ActionResult> ChangePassword(changePassword change,int id)
+        {
+            try
+            {
+                var data = await this.userRepository.ChangePassword(change,id);
+                return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "", Data = new { userId = data } });
+            }
+            catch(Exception ex)
+            {
+                return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
+            }
+        }
     }
 }

@@ -20,9 +20,10 @@ namespace Educational.DataContracts.Models
         public virtual DbSet<TbCategory> TbCategories { get; set; } = null!;
         public virtual DbSet<TbCourseDetail> TbCourseDetails { get; set; } = null!;
         public virtual DbSet<TbProfile> TbProfiles { get; set; } = null!;
+        public virtual DbSet<TbTutor> TbTutors { get; set; } = null!;
         public virtual DbSet<TbUser> TbUsers { get; set; } = null!;
 
-  
+   
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -88,6 +89,15 @@ namespace Educational.DataContracts.Models
                 entity.Property(e => e.ProfileId).HasColumnName("profileId");
 
                 entity.Property(e => e.UserId).HasColumnName("userId");
+            });
+
+            modelBuilder.Entity<TbTutor>(entity =>
+            {
+                entity.HasKey(e => e.Tutorid);
+
+                entity.ToTable("TB_Tutor");
+
+                entity.Property(e => e.Status).HasColumnName("status");
             });
 
             modelBuilder.Entity<TbUser>(entity =>
