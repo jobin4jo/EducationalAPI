@@ -20,10 +20,11 @@ namespace Educational.DataContracts.Models
         public virtual DbSet<TbCategory> TbCategories { get; set; } = null!;
         public virtual DbSet<TbCourseDetail> TbCourseDetails { get; set; } = null!;
         public virtual DbSet<TbProfile> TbProfiles { get; set; } = null!;
+        public virtual DbSet<TbReview> TbReviews { get; set; } = null!;
         public virtual DbSet<TbTutor> TbTutors { get; set; } = null!;
         public virtual DbSet<TbUser> TbUsers { get; set; } = null!;
 
-   
+      
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -89,6 +90,28 @@ namespace Educational.DataContracts.Models
                 entity.Property(e => e.ProfileId).HasColumnName("profileId");
 
                 entity.Property(e => e.UserId).HasColumnName("userId");
+            });
+
+            modelBuilder.Entity<TbReview>(entity =>
+            {
+                entity.HasKey(e => e.ReviewId);
+
+                entity.ToTable("TB_Review");
+
+                entity.Property(e => e.CourseId).HasColumnName("courseId");
+
+                entity.Property(e => e.ReviewCreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.ReviewerEmail).HasMaxLength(50);
+
+                entity.Property(e => e.ReviewerName).HasMaxLength(50);
+
+                entity.Property(e => e.Status).HasColumnName("status");
+
+                entity.HasOne(d => d.Course)
+                    .WithMany(p => p.TbReviews)
+                    .HasForeignKey(d => d.CourseId)
+                    .HasConstraintName("FK_TB_Review_TB_Review");
             });
 
             modelBuilder.Entity<TbTutor>(entity =>

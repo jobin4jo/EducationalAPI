@@ -50,5 +50,59 @@ namespace Educational.API.Controllers
                 return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
             }
         }
+
+        [HttpGet("DetailById")]
+        public async Task<ActionResult> TutorDetailById(int id )
+        {
+            try
+            {
+                var data = await this.tutorRepository.TutorGetById(id);
+
+                {
+                    return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "", Data = new { Data = data } });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
+            }
+        }
+
+        [HttpDelete("ById")]
+        public async Task<ActionResult> DeletebyId(int id)
+        {
+            try
+            {
+                var data = await this.tutorRepository.DeleteTutor(id);
+
+                {
+                    return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "DATA DELETE SUCESS", Data = new { Data = data } });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
+            }
+        }
+
+        [HttpPut("UpdateTutor/{id}")]
+        public async Task<ActionResult> UpdateTutor(TutorRequestDTO  tutorRequest,   int id)
+        {
+            try
+            {
+                var data = await this.tutorRepository.UpdateTutor(tutorRequest,id);
+
+                {
+                    return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "DATA UPDATE SUCESS", Data = new { Data = data } });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
+            }
+        }
     }
 }

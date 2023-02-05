@@ -1,4 +1,5 @@
 using Educational.API.Configuration;
+using Educational.Data.MappingProfiles;
 using Educational.DataContracts.Models;
 using Microsoft.Extensions.DependencyInjection;
 

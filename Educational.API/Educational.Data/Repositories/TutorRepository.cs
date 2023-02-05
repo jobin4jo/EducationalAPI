@@ -35,7 +35,7 @@ namespace Educational.Data.Repositories
             tutorData.Status = 0;
             _context.Entry(tutorData).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-            if (tutorData.Status !=null)
+            if (tutorData.Tutorid !=null)
             {
                 return true;
             }

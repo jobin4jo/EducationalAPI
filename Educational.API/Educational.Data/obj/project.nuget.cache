@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "QusqIkYJsALFMXn3lUzIZC/E0n0trDAz2mIRHdOo6ukwEI6Uk3bU5zXVoeX75Mv4nunjy9Jra0c7p8nM0+u8yA==",
+  "dgSpecHash": "Y9DQL/YNChXVnWQ02ybuJHIa/UpCbjrWpChmB7s0FcIOMBnzpwZq96uAMdIswCHtEkRKLCWCSDe7QF/2U7DHkg==",
   "success": true,
   "projectFilePath": "F:\\Educational\\WEBAPI\\Educational.API\\Educational.Data\\Educational.Data.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\JOBIN\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\JOBIN\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\JOBIN\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
-    "C:\\Users\\JOBIN\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\JOBIN\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\JOBIN\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\JOBIN\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",
     "C:\\Users\\JOBIN\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.12\\microsoft.entityframeworkcore.6.0.12.nupkg.sha512",

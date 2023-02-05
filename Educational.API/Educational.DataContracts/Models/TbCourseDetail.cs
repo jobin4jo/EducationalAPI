@@ -5,6 +5,11 @@ namespace Educational.DataContracts.Models
 {
     public partial class TbCourseDetail
     {
+        public TbCourseDetail()
+        {
+            TbReviews = new HashSet<TbReview>();
+        }
+
         public int CourseId { get; set; }
         public string? CourseName { get; set; }
         public string? CourseImageUrl { get; set; }
@@ -16,5 +21,7 @@ namespace Educational.DataContracts.Models
         public DateTime? DeletedOn { get; set; }
         public int? CategoryId { get; set; }
         public string CourseDescription { get; set; } = null!;
+
+        public virtual ICollection<TbReview> TbReviews { get; set; }
     }
 }

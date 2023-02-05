@@ -1,4 +1,5 @@
-﻿using Educational.Data.Repositories;
+﻿using Educational.Data.MappingProfiles;
+using Educational.Data.Repositories;
 using Educational.DataContracts.IRepositories;
 
 namespace Educational.API.Configuration
@@ -14,6 +15,7 @@ namespace Educational.API.Configuration
                     .AllowAnyMethod()
                     .AllowAnyHeader());
             });
+            services.AddAutoMapper(typeof(MappingProfiles));
         }
 
         public static void AddRepositories(this IServiceCollection serviceCollection)
@@ -26,8 +28,10 @@ namespace Educational.API.Configuration
             serviceCollection.AddScoped<IUserRepository, UserRepository>();
             serviceCollection.AddScoped<ICategoryRepository, CategoryRepository>(); 
             serviceCollection.AddScoped<ICourseDetailRepository , CourseDetailRepository>();
-            serviceCollection.AddScoped<ITutorRepository,TutorRepository>();
-         
+            serviceCollection.AddScoped<ITutorRepository, TutorRepository>();
+            serviceCollection.AddTransient<IReviewRepository, ReviewRepository>();
+
+
         }
     }
 }
