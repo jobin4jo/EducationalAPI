@@ -13,5 +13,6 @@ namespace Educational.DataContracts.Models
         public string? State { get; set; }
         public string? EmailId { get; set; }
         public int? UserId { get; set; }
+        public string? UserImagePath { get; set; }
     }
 }

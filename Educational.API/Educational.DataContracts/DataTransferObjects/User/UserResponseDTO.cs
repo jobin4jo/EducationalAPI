@@ -17,4 +17,16 @@ namespace Educational.DataContracts.DataTransferObjects.User
         public string Role { get; set; }
         public int userId { get; set; }
     }
+    public class UserDetailResponseDTO
+    {
+        public string? UserName { get; set; }
+        public string? Role { get; set; }
+        public int? Status { get; set; }
+        public string? PhoneNumber { get; set; }
+        public string? Address { get; set; }
+        public string? City { get; set; }
+        public string? State { get; set; }
+        public string? EmailId { get; set; }
+        public string? UserImagePath { get; set; }
+    }
 }

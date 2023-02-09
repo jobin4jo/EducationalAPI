@@ -16,5 +16,6 @@ namespace Educational.DataContracts.IRepositories
         Task<List<UserRequestDTO>> GetAllUser();
         Task<int>DeleteUser(int Userid);
         Task<bool> ChangePassword(changePassword changePassword, int UserId);
+        Task<UserDetailResponseDTO> GetUserDetail(int Userid);
     }
 }

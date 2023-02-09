@@ -132,5 +132,27 @@ namespace Educational.Data.Repositories
             }
             return true;
         }
+
+        public async Task<UserDetailResponseDTO> GetUserDetail(int Userid)
+        {
+            UserDetailResponseDTO userDetailResponse = await ( from user in _context.TbUsers
+                                                               join pro in _context.TbProfiles
+                                                               on user.UserId equals pro.UserId
+                                                               where pro.UserId == Userid
+                                                               select new UserDetailResponseDTO
+                                                               {
+                                                                   UserName=user.UserName,
+                                                                   PhoneNumber=pro.PhoneNumber,
+                                                                   Address=pro.Address,
+                                                                   EmailId=pro.EmailId, 
+                                                                   City=pro.City,
+                                                                   Role=user.Role,
+                                                                   State=pro.State,
+                                                                   Status=user.Status, 
+                                                                   UserImagePath=pro.UserImagePath
+
+                                                               }).FirstAsync();
+            return userDetailResponse;
+        }
     }
 }

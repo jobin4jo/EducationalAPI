@@ -18,13 +18,21 @@ namespace Educational.DataContracts.Models
 
         public virtual DbSet<TbAuthor> TbAuthors { get; set; } = null!;
         public virtual DbSet<TbCategory> TbCategories { get; set; } = null!;
+        public virtual DbSet<TbCoupon> TbCoupons { get; set; } = null!;
         public virtual DbSet<TbCourseDetail> TbCourseDetails { get; set; } = null!;
         public virtual DbSet<TbProfile> TbProfiles { get; set; } = null!;
         public virtual DbSet<TbReview> TbReviews { get; set; } = null!;
         public virtual DbSet<TbTutor> TbTutors { get; set; } = null!;
         public virtual DbSet<TbUser> TbUsers { get; set; } = null!;
 
-      
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Server=JOBIN-JO\\SQLEXPRESS;Database=Educational;Trusted_Connection=True;");
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -58,15 +66,34 @@ namespace Educational.DataContracts.Models
                 entity.Property(e => e.DeletedOn).HasColumnType("datetime");
             });
 
+            modelBuilder.Entity<TbCoupon>(entity =>
+            {
+                entity.HasKey(e => e.CouponId);
+
+                entity.ToTable("TB_Coupon");
+
+                entity.Property(e => e.EndDate).HasColumnType("datetime");
+
+                entity.Property(e => e.PurposeOfCoupon)
+                    .HasMaxLength(10)
+                    .IsFixedLength();
+
+                entity.Property(e => e.StartDate).HasColumnType("datetime");
+            });
+
             modelBuilder.Entity<TbCourseDetail>(entity =>
             {
                 entity.HasKey(e => e.CourseId);
 
                 entity.ToTable("TB_CourseDetails");
 
-                entity.Property(e => e.CourseImageUrl).HasMaxLength(50);
+                entity.Property(e => e.CourseImageUrl)
+                    .HasMaxLength(3000)
+                    .IsUnicode(false);
 
-                entity.Property(e => e.CourseName).HasMaxLength(50);
+                entity.Property(e => e.CourseName)
+                    .HasMaxLength(3000)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.CreatedBy).HasMaxLength(50);
 

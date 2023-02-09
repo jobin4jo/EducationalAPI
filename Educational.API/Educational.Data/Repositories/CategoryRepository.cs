@@ -15,7 +15,7 @@ namespace Educational.Data.Repositories
         public readonly EducationalContext _context;
         public CategoryRepository(EducationalContext context)
         {
-            _context = context;
+            this._context = context;
         }
 
         public async Task<int> AddCategory(CategoryRequestDTO categoryRequset)
@@ -24,8 +24,8 @@ namespace Educational.Data.Repositories
             category.CategoryName=categoryRequset.CategoryName;
             category.Status = 1;
             category.CreatedOn = DateTime.Now;
-            _context.TbCategories.Add(category);
-            await _context.SaveChangesAsync();
+            this._context.TbCategories.Add(category);
+            await this._context.SaveChangesAsync();
             return category.CategoryId;
         }
 

@@ -104,5 +104,18 @@ namespace Educational.API.Controllers
                 return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
             }
         }
+        [HttpGet("UserDetailGetByUserId")]
+        public async Task<ActionResult>UserDetailById(int UserId)
+        {
+            try
+            {
+                var data = await this.userRepository.GetUserDetail(UserId);
+                return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "", Data = new { userId = data } });
+            }
+            catch (Exception ex)
+            {
+                return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
+            }
+        }
     }
 }

@@ -30,6 +30,7 @@ namespace Educational.API.Configuration
             serviceCollection.AddScoped<ICourseDetailRepository , CourseDetailRepository>();
             serviceCollection.AddScoped<ITutorRepository, TutorRepository>();
             serviceCollection.AddTransient<IReviewRepository, ReviewRepository>();
+            serviceCollection.AddScoped<ICouponRepository, CouponRepository>();
 
 
         }

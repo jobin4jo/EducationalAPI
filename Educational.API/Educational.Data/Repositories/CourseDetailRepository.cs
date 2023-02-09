@@ -15,7 +15,7 @@ namespace Educational.Data.Repositories
         public readonly EducationalContext _context;
         public CourseDetailRepository(EducationalContext context)
         {
-            _context = context;
+            this._context = context;
         }
 
         public async Task<int> AddCourseDetail(CourseRequestDTO categoryRequset)
@@ -29,8 +29,8 @@ namespace Educational.Data.Repositories
             courseDetail.CategoryId = categoryRequset.CategoryId;
             courseDetail.Status = 1;
             courseDetail.CreatedOn = DateTime.Now;
-            _context.TbCourseDetails.Add(courseDetail);
-            await _context.SaveChangesAsync();
+            this._context.TbCourseDetails.Add(courseDetail);
+            await this._context.SaveChangesAsync();
             return courseDetail.CourseId;
 
         }
