@@ -18,21 +18,18 @@ namespace Educational.DataContracts.Models
 
         public virtual DbSet<TbAuthor> TbAuthors { get; set; } = null!;
         public virtual DbSet<TbCategory> TbCategories { get; set; } = null!;
+        public virtual DbSet<TbCertification> TbCertifications { get; set; } = null!;
+        public virtual DbSet<TbCity> TbCities { get; set; } = null!;
+        public virtual DbSet<TbCountry> TbCountries { get; set; } = null!;
         public virtual DbSet<TbCoupon> TbCoupons { get; set; } = null!;
         public virtual DbSet<TbCourseDetail> TbCourseDetails { get; set; } = null!;
         public virtual DbSet<TbProfile> TbProfiles { get; set; } = null!;
         public virtual DbSet<TbReview> TbReviews { get; set; } = null!;
+        public virtual DbSet<TbState> TbStates { get; set; } = null!;
         public virtual DbSet<TbTutor> TbTutors { get; set; } = null!;
         public virtual DbSet<TbUser> TbUsers { get; set; } = null!;
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=JOBIN-JO\\SQLEXPRESS;Database=Educational;Trusted_Connection=True;");
-            }
-        }
+      
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -64,6 +61,52 @@ namespace Educational.DataContracts.Models
                 entity.Property(e => e.DeletedBy).HasMaxLength(50);
 
                 entity.Property(e => e.DeletedOn).HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<TbCertification>(entity =>
+            {
+                entity.HasKey(e => e.CertificateId);
+
+                entity.ToTable("TB_Certification");
+
+                entity.Property(e => e.IssueDate).HasColumnType("datetime");
+
+                entity.HasOne(d => d.Course)
+                    .WithMany(p => p.TbCertifications)
+                    .HasForeignKey(d => d.CourseId)
+                    .HasConstraintName("FK_TB_Certification_TB_CourseDetails");
+
+                entity.HasOne(d => d.Tutor)
+                    .WithMany(p => p.TbCertifications)
+                    .HasForeignKey(d => d.TutorId)
+                    .HasConstraintName("FK_TB_Certification_TB_Tutor");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.TbCertifications)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK_TB_Certification_TB_User");
+            });
+
+            modelBuilder.Entity<TbCity>(entity =>
+            {
+                entity.ToTable("TB_City");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.DeletedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
+            });
+
+            modelBuilder.Entity<TbCountry>(entity =>
+            {
+                entity.ToTable("TB_Country");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.DeletedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
             });
 
             modelBuilder.Entity<TbCoupon>(entity =>
@@ -139,6 +182,17 @@ namespace Educational.DataContracts.Models
                     .WithMany(p => p.TbReviews)
                     .HasForeignKey(d => d.CourseId)
                     .HasConstraintName("FK_TB_Review_TB_Review");
+            });
+
+            modelBuilder.Entity<TbState>(entity =>
+            {
+                entity.ToTable("TB_State");
+
+                entity.Property(e => e.CreatedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.DeletedOn).HasColumnType("datetime");
+
+                entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
             });
 
             modelBuilder.Entity<TbTutor>(entity =>

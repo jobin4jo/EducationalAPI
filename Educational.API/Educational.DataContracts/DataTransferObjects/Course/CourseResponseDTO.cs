@@ -15,4 +15,14 @@ namespace Educational.DataContracts.DataTransferObjects.Course
         public int? CategoryId { get; set; }
         public string CourseDescription { get; set; } = null!;
     }
+
+    public class PaginationCourseResponseDTO
+    {
+        public int CurrentPage { get; init; }
+
+        public int TotalItems { get; init; }
+
+        public int TotalPages { get; init; }
+        public List<CourseResponseDTO> Items { get; init; }
+    }
 }

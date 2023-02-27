@@ -7,6 +7,7 @@ namespace Educational.DataContracts.Models
     {
         public TbCourseDetail()
         {
+            TbCertifications = new HashSet<TbCertification>();
             TbReviews = new HashSet<TbReview>();
         }
 
@@ -22,6 +23,7 @@ namespace Educational.DataContracts.Models
         public string? CourseName { get; set; }
         public string? CourseImageUrl { get; set; }
 
+        public virtual ICollection<TbCertification> TbCertifications { get; set; }
         public virtual ICollection<TbReview> TbReviews { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Educational.Data.MappingProfiles;
+﻿
+using Educational.Data.MappingProfiles;
 using Educational.Data.Repositories;
 using Educational.DataContracts.IRepositories;
 
@@ -31,6 +32,9 @@ namespace Educational.API.Configuration
             serviceCollection.AddScoped<ITutorRepository, TutorRepository>();
             serviceCollection.AddTransient<IReviewRepository, ReviewRepository>();
             serviceCollection.AddScoped<ICouponRepository, CouponRepository>();
+            serviceCollection.AddScoped<ICountryRepository, CountryRepository>();
+            serviceCollection.AddScoped<IStateRepository, StateRepository>();
+            serviceCollection.AddScoped<ICityRepository, CityRepository>();
 
 
         }

@@ -69,3 +69,7 @@ F:\Educational\WEBAPI\Educational.API\Educational.API\obj\Debug\net6.0\ref\Educa
 F:\Educational\WEBAPI\Educational.API\Educational.API\bin\Debug\net6.0\Educational.API.staticwebassets.runtime.json
 F:\Educational\WEBAPI\Educational.API\Educational.API\bin\Debug\net6.0\AutoMapper.dll
 F:\Educational\WEBAPI\Educational.API\Educational.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+F:\Educational\WEBAPI\Educational.API\Educational.API\bin\Debug\net6.0\MailKit.dll
+F:\Educational\WEBAPI\Educational.API\Educational.API\bin\Debug\net6.0\MimeKit.dll
+F:\Educational\WEBAPI\Educational.API\Educational.API\bin\Debug\net6.0\NETCore.MailKit.dll
+F:\Educational\WEBAPI\Educational.API\Educational.API\bin\Debug\net6.0\BouncyCastle.Crypto.dll

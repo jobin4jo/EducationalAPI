@@ -33,15 +33,32 @@ namespace Educational.API.Controllers
             }
         }
 
-        [HttpGet("GetAllCourse")]
-        public async Task<ActionResult> GetAlCourse()
+        [HttpPost("GetAllCourse")]
+        public async Task<ActionResult> GetAlCourse(CourseDefaultRequest courseDefault)
         {
             try
             {
-                var data = await this._courseDetail.GetAllCourseList();
+                var data = await this._courseDetail.GetAllCourseList(courseDefault);
 
                 {
                     return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "", Data = new { Data= data } });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
+            }
+        }
+        [HttpGet("Search")]
+        public async Task<ActionResult> SearcCourse(string name)
+        {
+            try
+            {
+                var data = await this._courseDetail.SearchCourseDetails(name);  
+
+                {
+                    return new CreatedResult(string.Empty, new { Code = 200, Status = true, Message = "", Data = new { Data = data } });
 
                 }
             }
@@ -85,7 +102,7 @@ namespace Educational.API.Controllers
                 return new CreatedResult(string.Empty, new { Code = 401, Status = false, Message = ex, Data = new { } });
             }
         }
-
-
+    
+      
     }
 }

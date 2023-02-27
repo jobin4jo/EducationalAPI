@@ -15,4 +15,11 @@ namespace Educational.DataContracts.DataTransferObjects.Course
         public int? CategoryId { get; set; }
         public string CourseDescription { get; set; } = null!;
     }
+
+
+    public class CourseDefaultRequest
+    {
+        public DateTime? FromDate { get; set; }
+        public DateTime? ToDate { get; set; }
+    }
 }
